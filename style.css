@@ -1,0 +1,49 @@
+:root {
+  --bg: #f3f5f4;
+  --surface: #ffffff;
+  --fg: #17211e;
+  --muted: #56655f;
+  --line: #d9e0dd;
+  --accent: #146b5c;
+  --accent-soft: #dcebe6;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1412;
+    --surface: #161e1c;
+    --fg: #e3ebe8;
+    --muted: #9aaba5;
+    --line: #2a3633;
+    --accent: #5cc7ad;
+    --accent-soft: #1b322c;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Noto Sans Arabic", "Geeza Pro", Roboto, sans-serif;
+}
+.page { max-width: 46rem; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; }
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+.mark { width: 48px; height: 48px; border-radius: 12px; background: var(--accent); display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 6px; flex: none; }
+.mark span { background: var(--surface); border-radius: 2px; opacity: 0.92; }
+.mark span:nth-child(5) { background: var(--accent-soft); opacity: 1; }
+h1 { font-size: 1.75rem; line-height: 1.2; margin: 0; }
+.sub { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
+h2 { font-size: 1.25rem; margin: 36px 0 10px; }
+h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+p, li { max-width: 65ch; }
+a { color: var(--accent); }
+nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 8px; font-size: 0.95rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 4px 20px 16px; margin-top: 16px; }
+.button { display: inline-block; background: var(--accent); color: var(--surface); text-decoration: none; font-weight: 600; padding: 10px 18px; border-radius: 12px; }
+.note { color: var(--muted); font-size: 0.92rem; }
+[dir="rtl"] { text-align: right; }
+section[lang="ar"] { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+a:focus-visible, .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
